@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content='text/html; charset=UTF-8' http-equiv='content-type'>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+		<link rel='icon' type='image/png' href='favicon.png' />
+		<title>bonjourTron</title>
+		<style>
+html,body {
+  -webkit-text-size-adjust: none;
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position:fixed;
+  font-weight:normal;
+  font-family: 'Courier New', Courier, monospace;
+}
+.general {
+  -webkit-text-size-adjust: none;
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position:fixed;
+  font-weight:normal;
+  font-family: 'Courier New', Courier, monospace;
+}
+@media only screen and (min-width: 320px) {
+html,body {
+  -webkit-text-size-adjust: none;
+  background-color: black;
+  color: white;
+  width: 360px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position:fixed;
+  font-weight:normal;
+  font-family: 'Courier New', Courier, monospace;
+}
+.general {
+  -webkit-text-size-adjust: none;
+  background-color: black;
+  color: white;
+  width: 360px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position:fixed;
+  font-weight:normal;
+  font-family: 'Courier New', Courier, monospace;
+}
+@media only screen and (min-width: 360px) {
+html,body {
+  -webkit-text-size-adjust: none;
+  background-color: black;
+  color: white;
+  width: 360px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position:fixed;
+  font-weight:normal;
+  font-family: 'Courier New', Courier, monospace;
+}
+.general {
+  -webkit-text-size-adjust: none;
+  background-color: black;
+  color: white;
+  width: 360px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position:fixed;
+  font-weight:normal;
+  font-family: 'Courier New', Courier, monospace;
+}
+.pantallaJoc {
+line-height: 9px;
+font-size: 17px;
+}
+		</style>
+</head>
+<body>
+<script type='text/javascript'>
+var i;
+var j;
+var varPantallaJoc=new Array(25);
+for (i=0; i<25; i++) 
+	{
+	varPantallaJoc[i]=new Array(25);
+	}
+var dirJ0='r';
+var dirJ1='l';
+var posVertJ0=12;
+var posHoriJ0=3;
+var posVertJ1=12;
+var posHoriJ1=21;
+varPantallaJoc=[['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·']];
+var cadena='';
+var jocAcavat=false;
+var aleatori;
+function dreta()
+	{
+	var changedDir=false;
+	if (dirJ1==='l' && changedDir===false)
+		{
+		dirJ1='u';
+		changedDir=true;
+		}
+	if (dirJ1==='r' && changedDir===false)
+		{
+		dirJ1='d';
+		changedDir=true;
+		}
+	if (dirJ1==='u' && changedDir===false)
+		{
+		dirJ1='r';
+		changedDir=true;
+		}
+	if (dirJ1==='d' && changedDir===false)
+		{
+		dirJ1='l';
+		changedDir=true;
+		}
+	}
+function esquerra()
+	{
+	var changedDir=false;
+	if (dirJ1==='l' && changedDir===false)
+		{
+		dirJ1='d';
+		changedDir=true;
+		}
+	if (dirJ1==='r' && changedDir===false)
+		{
+		dirJ1='u';
+		changedDir=true;
+		}
+	if (dirJ1==='u' && changedDir===false)
+		{
+		dirJ1='l';
+		changedDir=true;
+		}
+	if (dirJ1==='d' && changedDir===false)
+		{
+		dirJ1='r';
+		changedDir=true;
+		}
+	}
+function refrescarVariablePantallaJoc(id)
+	{
+	cadena='Player0 (Kamikaze Machine)<br>Player1 (Human Player)<br>Winner: None<br>';
+	//jugador0
+	//si es pot anar recte
+	if(dirJ0==='r' && posHoriJ0<24 && varPantallaJoc[posVertJ0][posHoriJ0+1]==='·')
+		{
+		posHoriJ0++;
+		}
+	if(dirJ0==='l' && posHoriJ0>0 && varPantallaJoc[posVertJ0][posHoriJ0-1]==='·')
+		{
+		posHoriJ0--;
+		}
+	if(dirJ0==='d' && posVertJ0<24 && varPantallaJoc[posVertJ0+1][posHoriJ0]==='·')
+		{
+		posVertJ0++;
+		}
+	if(dirJ0==='u' && posVertJ0>0 && varPantallaJoc[posVertJ0-1][posHoriJ0]==='·')
+		{
+		posVertJ0--;
+		}
+	//si el devant esta bloquejat per un rastre
+	if(dirJ0==='r' && posHoriJ0<24 && varPantallaJoc[posVertJ0][posHoriJ0+1]!=='·')
+		{
+		if ((posVertJ0<24 && varPantallaJoc[posVertJ0+1][posHoriJ0]==='·') && (posVertJ0>0 && varPantallaJoc[posVertJ0-1][posHoriJ0]==='·'))
+			{
+			aleatori=parseInt(Math.random()*2);
+			if (aleatori===0)
+				{
+				dirJ0='d';
+				}
+			if (aleatori===1)
+				{
+				dirJ0='u';
+				}
+			}
+		else if (posVertJ0<24 && varPantallaJoc[posVertJ0+1][posHoriJ0]==='·')
+			{
+			dirJ0='d';
+			}
+		else if (posVertJ0>0 && varPantallaJoc[posVertJ0-1][posHoriJ0]==='·')
+			{
+			dirJ0='u';
+			}
+		}
+	if(dirJ0==='l' && posHoriJ0>0 && varPantallaJoc[posVertJ0][posHoriJ0-1]!=='·')
+		{
+		if ((posVertJ0<24 && varPantallaJoc[posVertJ0+1][posHoriJ0]==='·') && (posVertJ0>0 && varPantallaJoc[posVertJ0-1][posHoriJ0]==='·'))
+			{
+			aleatori=parseInt(Math.random()*2);
+			if (aleatori===0)
+				{
+				dirJ0='d';
+				}
+			if (aleatori===1)
+				{
+				dirJ0='u';
+				}
+			}
+		else if (posVertJ0<24 && varPantallaJoc[posVertJ0+1][posHoriJ0]==='·')
+			{
+			dirJ0='d';
+			}
+		else if (posVertJ0>0 && varPantallaJoc[posVertJ0-1][posHoriJ0]==='·')
+			{
+			dirJ0='u';
+			}
+		}
+	if(dirJ0==='d' && posVertJ0<24 && varPantallaJoc[posVertJ0+1][posHoriJ0]!=='·')
+		{
+		if ((posHoriJ0<24 && varPantallaJoc[posVertJ0][posHoriJ0+1]==='·') && (posHoriJ0>0 && varPantallaJoc[posVertJ0][posHoriJ0-1]==='·'))
+			{
+			aleatori=parseInt(Math.random()*2);
+			if (aleatori===0)
+				{
+				dirJ0='r';
+				}
+			if (aleatori===1)
+				{
+				dirJ0='l';
+				}
+			}
+		else if (posHoriJ0<24 && varPantallaJoc[posVertJ0][posHoriJ0+1]==='·')
+			{
+			dirJ0='r';
+			}
+		else if (posHoriJ0>0 && varPantallaJoc[posVertJ0][posHoriJ0-1]==='·')
+			{
+			dirJ0='l';
+			}
+		}
+	if(dirJ0==='u' && posVertJ0>0 && varPantallaJoc[posVertJ0-1][posHoriJ0]!=='·')
+		{
+		if ((posHoriJ0<24 && varPantallaJoc[posVertJ0][posHoriJ0+1]==='·') && (posHoriJ0>0 && varPantallaJoc[posVertJ0][posHoriJ0-1]==='·'))
+			{
+			aleatori=parseInt(Math.random()*2);
+			if (aleatori===0)
+				{
+				dirJ0='r';
+				}
+			if (aleatori===1)
+				{
+				dirJ0='l';
+				}
+			}
+		else if (posHoriJ0<24 && varPantallaJoc[posVertJ0][posHoriJ0+1]==='·')
+			{
+			dirJ0='r';
+			}
+		else if (posHoriJ0>0 && varPantallaJoc[posVertJ0][posHoriJ0-1]==='·')
+			{
+			dirJ0='l';
+			}
+		}
+	//si va a sortir de la varPantalla
+	if(dirJ0==='r' && posHoriJ0===24)
+		{
+		if (posVertJ0<24 && varPantallaJoc[posVertJ0+1][posHoriJ0]==='·')
+			{
+			dirJ0='d';
+			}
+		else if (posVertJ0>0 && varPantallaJoc[posVertJ0-1][posHoriJ0]==='·')
+			{
+			dirJ0='u';
+			}
+		}
+	if(dirJ0==='l' && posHoriJ0===0)
+		{
+		if (posVertJ0<24 && varPantallaJoc[posVertJ0+1][posHoriJ0]==='·')
+			{
+			dirJ0='d';
+			}
+		else if (posVertJ0>0 && varPantallaJoc[posVertJ0-1][posHoriJ0]==='·')
+			{
+			dirJ0='u';
+			}
+		}
+	if(dirJ0==='d' && posVertJ0===24)
+		{
+		if (posHoriJ0<24 && varPantallaJoc[posVertJ0][posHoriJ0+1]==='·')
+			{
+			dirJ0='r';
+			}
+		else if (posHoriJ0>0 && varPantallaJoc[posVertJ0][posHoriJ0-1]==='·')
+			{
+			dirJ0='l';
+			}
+		}
+	if(dirJ0==='u' && posVertJ0===0)
+		{
+		if (posHoriJ0<24 && varPantallaJoc[posVertJ0][posHoriJ0+1]==='·')
+			{
+			dirJ0='r';
+			}
+		else if (posHoriJ0>0 && varPantallaJoc[posVertJ0][posHoriJ0-1]==='·')
+			{
+			dirJ0='l';
+			}
+		}
+	if (varPantallaJoc[posVertJ0][posHoriJ0]!=='·')
+		{
+		cadena='<br>Winner: Human Player<br><br>';
+		jocAcavat=true;
+		varPantallaJoc[posVertJ0][posHoriJ0]='0';
+		for(i=0; i<25; i++)
+			{
+			for(j=0; j<25; j++)
+				{
+				if (varPantallaJoc[i][j]==='·')
+					{
+					cadena=cadena+"<img style='position:inherit;' src='ph.png'>";
+					}
+				if (varPantallaJoc[i][j]==='0')
+					{
+					cadena=cadena+"<img style='position:inherit;' src='p0.png'>";
+					}
+				if (varPantallaJoc[i][j]==='1')
+					{
+					cadena=cadena+"<img style='position:inherit;' src='p1.png'>";
+					}
+				}
+			cadena=cadena+'<br>';
+			}
+		document.getElementById(id).innerHTML=cadena;
+		return;
+		}
+	//Preparar per imprimir
+	varPantallaJoc[posVertJ0][posHoriJ0]='0';
+	for(i=0; i<25; i++)
+		{
+		for(j=0; j<25; j++)
+			{
+			if (varPantallaJoc[i][j]==='·')
+				{
+				cadena=cadena+"<img style='position:inherit;' src='ph.png'>";
+				}
+			if (varPantallaJoc[i][j]==='0')
+				{
+				cadena=cadena+"<img style='position:inherit;' src='p0.png'>";
+				}
+			if (varPantallaJoc[i][j]==='1')
+				{
+				cadena=cadena+"<img style='position:inherit;' src='p1.png'>";
+				}
+			}
+		cadena=cadena+'<br>';
+		}
+	document.getElementById(id).innerHTML=cadena;
+	//jugador1	
+	cadena='<br>Winner: Not yet available<br><br>';
+	if(dirJ1==='r' && posHoriJ1<24 && varPantallaJoc[posVertJ1][posHoriJ1+1]==='·')
+		{
+		posHoriJ1++;
+		}
+	if(dirJ1==='l' && posHoriJ1>0 && varPantallaJoc[posVertJ1][posHoriJ1-1]==='·')
+		{
+		posHoriJ1--;
+		}
+	if(dirJ1==='d' && posVertJ1<24 && varPantallaJoc[posVertJ1+1][posHoriJ1]==='·')
+		{
+		posVertJ1++;
+		}
+	if(dirJ1==='u' && posVertJ1>0 && varPantallaJoc[posVertJ1-1][posHoriJ1]==='·')
+		{
+		posVertJ1--;
+		}
+	if (varPantallaJoc[posVertJ1][posHoriJ1]!=='·')
+		{
+		cadena='<br>Winner: Kamikaze Machine<br><br>';
+		jocAcavat=true;
+		varPantallaJoc[posVertJ1][posHoriJ1]='1';
+		for(i=0; i<25; i++)
+			{
+			for(j=0; j<25; j++)
+				{
+				if (varPantallaJoc[i][j]==='·')
+					{
+					cadena=cadena+"<img style='position:inherit;' src='ph.png'>";
+					}
+				if (varPantallaJoc[i][j]==='0')
+					{
+					cadena=cadena+"<img style='position:inherit;' src='p0.png'>";
+					}
+				if (varPantallaJoc[i][j]==='1')
+					{
+					cadena=cadena+"<img style='position:inherit;' src='p1.png'>";
+					}
+				}
+			cadena=cadena+'<br>';
+			}
+		document.getElementById(id).innerHTML=cadena;
+		return;
+		}
+	varPantallaJoc[posVertJ1][posHoriJ1]='1';
+	for(i=0; i<25; i++)
+		{
+		for(j=0; j<25; j++)
+			{
+			if (varPantallaJoc[i][j]==='·')
+				{
+				cadena=cadena+"<img style='position:inherit;' src='ph.png'>";
+				}
+			if (varPantallaJoc[i][j]==='0')
+				{
+				cadena=cadena+"<img style='position:inherit;' src='p0.png'>";
+				}
+			if (varPantallaJoc[i][j]==='1')
+				{
+				cadena=cadena+"<img style='position:inherit;' src='p1.png'>";
+				}
+			}
+		cadena=cadena+'<br>';
+		}
+	document.getElementById(id).innerHTML=cadena;
+	}
+function refrescar()
+	{
+	if (jocAcavat===false)
+		{
+		refrescarVariablePantallaJoc('pantallaJoc');
+		setTimeout('refrescar()',200);
+		}
+	}
+function iniciar()
+	{
+	dirJ0='r';
+	dirJ1='l';
+	posVertJ0=12;
+	posHoriJ0=3;
+	posVertJ1=12;
+	posHoriJ1=21;
+	varPantallaJoc=[['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·'],
+['·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·','·']];
+	jocAcavat=false;
+	refrescar();
+	}
+</script>
+<input type='button' value='Start Game' onclick='iniciar()' />
+<div id='pantallaJoc' class='pantallaJoc'></div>
+<script type='text/javascript'>	
+	cadena='<br>Winner: No yet available<br><br>';
+	for(i=0; i<25; i++)
+		{
+		for(j=0; j<25; j++)
+			{
+			if (varPantallaJoc[i][j]==='·')
+				{
+				cadena=cadena+"<img style='position:inherit;' src='ph.png'>";
+				}
+			}
+		cadena=cadena+'<br>';
+		}
+	document.getElementById('pantallaJoc').innerHTML=cadena;
+</script>
+<br>
+<input type='button' value='&#9664;&#9664;&#9664; turn' onclick='esquerra()' />control buttons<input type='button' value='turn &#9654;&#9654;&#9654;' onclick='dreta()' />
+</body>
+</html>
